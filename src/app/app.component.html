@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)]="routeInpute"  placeholder="type route..."  
+(keyup)="onkeyPress($event)"  />
+ <button (click)="gotoRoute()">GoTo</button>
+ <div >
+   @for(list of  routeList; track list;){
+      <span class="routelist" (click)="enterRoute(list)"> {{ list }} </span>
+   }
+ </div>
+<router-outlet></router-outlet>

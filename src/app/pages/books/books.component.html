@@ -1,0 +1,41 @@
+<h2>Books List</h2>
+<ul>
+  <li *ngFor="let book of books">
+    <strong>{{ book.title }}</strong> - {{ book.isbn }}
+    <br />
+    <em>Authors:</em> {{ book.authors.join(', ') }}<br />
+    <em>Categories:</em> {{ book.categories.join(', ') }}
+  </li>
+</ul>
+
+<h2>Add New Book</h2>
+<form (ngSubmit)="addBook()">
+  <label>Title:</label>
+  <input [(ngModel)]="newBook.title" name="title" required />
+
+  <label>ISBN:</label>
+  <input [(ngModel)]="newBook.isbn" name="isbn" required />
+
+  <label>Page Count:</label>
+  <input type="number" [(ngModel)]="newBook.pageCount" name="pageCount" />
+
+  <label>Published Date:</label>
+  <input type="date" [(ngModel)]="newBook.publishedDate" name="publishedDate" />
+
+  <label>Thumbnail URL:</label>
+  <input [(ngModel)]="newBook.thumbnailUrl" name="thumbnailUrl" />
+
+  <label>Short Description:</label>
+  <textarea [(ngModel)]="newBook.shortDescription" name="shortDescription"></textarea>
+
+  <label>Long Description:</label>
+  <textarea [(ngModel)]="newBook.longDescription" name="longDescription"></textarea>
+
+  <!-- <label>Authors (comma-separated):</label>
+  <input [(ngModel)]="newBook.authors" name="authors" (change)="newBook.authors = $event.target.value.split(',')" />
+
+  <label>Categories (comma-separated):</label>
+  <input [(ngModel)]="newBook.categories" name="categories" (change)="newBook.categories = $event.target.value.split(',')" /> -->
+
+  <button type="submit">Add Book</button>
+</form>

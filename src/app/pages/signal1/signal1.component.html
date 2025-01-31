@@ -1,0 +1,6 @@
+<p>signal1 works! {{ checkNum1() }}</p>
+<input type="number" #numInput  placeholder="increase signal ...."  />
+<button (click)="replaceSignal(numInput.value)">Replace</button>
+<button (click)="addSignal(numInput.value)">Update</button>
+<button (click)="removeSignal(numInput.value)">Reduce</button>
+

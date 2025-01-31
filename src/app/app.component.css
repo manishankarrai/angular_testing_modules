@@ -1,0 +1,7 @@
+.routelist {
+     padding:  5px;
+     cursor: pointer;
+     color : rgba(195, 50, 50, 0.808); 
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: 700;
+}

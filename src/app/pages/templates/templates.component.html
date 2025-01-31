@@ -1,0 +1,49 @@
+<p>templates works!</p>
+<input type="text" #myInput />
+<button (click)="focusInput()">Focus Input</button>
+@switch(matchStatus){
+   @case('start') {
+     <h1>  Just Start </h1>
+   }
+   @case('running') {
+    <h1>  Running  </h1>
+  }
+   @case('processing') {
+    <h1>  Just proccesss </h1>
+  }
+   @case('end') {
+    <h1>  Just END </h1>
+  }
+  @default {
+     <h1><b> I dont know  </b> </h1>
+  }
+}
+<div [ngSwitch]="matchStatus2" >
+       <div *ngSwitchCase="'a'"> A </div>
+       <div *ngSwitchCase="'b'"> B </div>
+       <div *ngSwitchCase="'c'"> C </div>
+       <div *ngSwitchCase="'d'"> D </div>
+       <DIV *ngSwitchDefault > ABC  </DIV>
+
+</div>
+
+<app-content2>
+  <div phone> 9829293289922 </div>
+  <div email> m&#64;gmail.com </div>
+</app-content2>
+<ng-container *ngIf="showMessageBoolean; else elseBlock" [ngTemplateOutlet]="ifBlock">
+  <ng-template #ifBlock>
+    <h1> if </h1>
+  </ng-template>
+</ng-container>
+
+<ng-template #elseBlock>
+  <h1> else </h1>
+</ng-template>
+
+<ng-template #showMYwelcome>
+  <h1> Welcome </h1>
+</ng-template>
+<button (click)="showMessageBoolean = !showMessageBoolean"> Show Message </button>
+
+<ng-container *ngIf="showMessageBoolean" [ngTemplateOutlet]="showMYwelcome"></ng-container>

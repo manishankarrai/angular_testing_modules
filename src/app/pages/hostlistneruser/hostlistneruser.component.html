@@ -1,0 +1,13 @@
+<p  >hostlistneruser works!</p>
+<button appTestdirective>Click Me</button>
+<div appTestdirective style="width: 200px; height: 100px; border: 1px solid black; margin: 10px;  padding: 10px;">
+  Click this box
+</div>
+
+<div appScroller style="height: 200px; overflow-y: scroll; border: 1px solid black;">
+    <div>Scrollable Content Here</div>
+    @for(num of arrList; track num;){
+        <p [id]="num">{{ num }}</p>
+    }
+</div>
+  
