@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'ngtest';
   routeInpute: string = '';
-  routeListOriginal: string[] = ['home', 'hostlistner' , 'gallaryview' , 'template1' , "core" , 'signal1'];
+  routeListOriginal: string[] = ['home', 'hostlistner' , 'gallaryview' , 'template1' , "core" , 'signal1', 'imageupload' ,  'core_input'];
   routeList: string[] = [];
 
   constructor(private router: Router) { }

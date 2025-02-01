@@ -22,6 +22,9 @@ import { CoreComponent } from './pages/core/core.component';
 import { CoreChild1Component } from './pages/core-child1/core-child1.component';
 import { CoreChild2Component } from './pages/core-child2/core-child2.component';
 import { Signal1Component } from './pages/signal1/signal1.component';
+import { ImageuploadComponent } from './pages/imageupload/imageupload.component';
+import { InputComponent } from './pages/input/input.component';
+import { Input2Component } from './pages/input2/input2.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { Signal1Component } from './pages/signal1/signal1.component';
     CoreComponent,
     CoreChild1Component,
     CoreChild2Component,
-    Signal1Component
+    Signal1Component,
+    ImageuploadComponent,
+    InputComponent,
+    Input2Component
   ],
   imports: [
     BrowserModule,

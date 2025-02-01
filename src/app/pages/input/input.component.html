@@ -1,0 +1,8 @@
+<p>input works!</p>
+<p> {{ firstName() }} </p>
+<input type="text"  #val  />
+<button (click)="updateInput(val.value)" > Update </button>
+
+
+<app-input2 [data]="messageAbc" [firstName]="personaInfo.firstName" [lastName]="personaInfo.lastName"  [department]="personaInfo.department"
+ [branch]="personaInfo.branch" [about]="personaInfo.about"></app-input2>

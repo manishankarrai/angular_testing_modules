@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit , DoCheck  {
      age : number =  1 ;
      numArray: number[] =  [];
      myname : string  = 'checkabc' ;
+     count : number  =   0 ;
+     isLoggedIn : boolean =  true ;
      ngOnInit(): void {
          this.numArray =  [1,2,3,4,5];
      }
@@ -27,5 +29,12 @@ export class HomeComponent implements OnInit , DoCheck  {
      }
      increment(): void {
         this.age++ ;
+     }
+     ngPluralIncrease() : void {
+        if(this.count < 4){
+            this.count++ ;
+        }else {
+            this.count = 0 ;
+        }
      }
 }

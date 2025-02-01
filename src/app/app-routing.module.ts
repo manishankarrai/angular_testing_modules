@@ -6,6 +6,8 @@ import { GalleryviewComponent } from './pages/galleryview/galleryview.component'
 import { TemplatesComponent } from './pages/templates/templates.component';
 import { CoreComponent } from './pages/core/core.component';
 import { Signal1Component } from './pages/signal1/signal1.component';
+import { ImageuploadComponent } from './pages/imageupload/imageupload.component';
+import { InputComponent } from './pages/input/input.component';
 
 const routes: Routes = [
   { path: 'home'  , component: HomeComponent } ,
@@ -14,6 +16,9 @@ const routes: Routes = [
   { path: "template1" , component : TemplatesComponent } ,
   { path: "core" , component : CoreComponent } ,
   { path: "signal1" , component: Signal1Component } ,
+  { path : "imageupload" , component : ImageuploadComponent  } ,
+  { path : "core_input" , component : InputComponent  } ,
+  
   { path : '' , redirectTo: 'home' ,  pathMatch: 'full'  }
 ];
 

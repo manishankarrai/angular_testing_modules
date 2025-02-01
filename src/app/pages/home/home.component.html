@@ -14,3 +14,28 @@
 <div >
     <app-goodcard></app-goodcard>
 </div>
+
+<div [ngPlural]="count" >
+     <ng-template ngPluralCase="0">Hey 0 </ng-template>
+     <ng-template ngPluralCase="1">Mr 1 </ng-template>
+     <ng-template ngPluralCase="2">Mr 2 </ng-template>
+     <ng-template ngPluralCase="3">Mr 3 </ng-template>
+     <ng-template  ngPluralCase="OTHER" >Other  </ng-template>
+</div>
+<button  (click)="ngPluralIncrease()" >ngPlural</button>
+
+<div *ngIf="isLoggedIn; else loggedOutBlock; then loggedInBlock"></div>
+
+<ng-template #loggedInBlock>
+  <p>Welcome, user !</p>
+</ng-template>
+
+<ng-template #loggedOutBlock>
+  <p>Please log in.</p>
+</ng-template>
+
+@if(isLoggedIn){
+    <p>Wel </p>
+}@else {
+    <h2> Come </h2>
+}

@@ -1,0 +1,9 @@
+<p>imageupload works!</p>
+<input type="file" #inputref (change)="uploadImageEvent($event)" accept="image/*" />
+<button (click)="resetUploadImage()">Reset  </button>
+
+<div>
+ <div>  {{  fileName }}</div> 
+    <img [src]="imagePriview" alt="upload you image...." />
+
+</div>
