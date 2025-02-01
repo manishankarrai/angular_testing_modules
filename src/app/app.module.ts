@@ -25,6 +25,9 @@ import { Signal1Component } from './pages/signal1/signal1.component';
 import { ImageuploadComponent } from './pages/imageupload/imageupload.component';
 import { InputComponent } from './pages/input/input.component';
 import { Input2Component } from './pages/input2/input2.component';
+import { ReusableFormComponent } from './pages/reusable-form/reusable-form.component';
+import { InputtypeComponent } from './pages/reusableForm/inputtype/inputtype.component';
+import { SelecttypeComponent } from './pages/reusableForm/selecttype/selecttype.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { Input2Component } from './pages/input2/input2.component';
     Signal1Component,
     ImageuploadComponent,
     InputComponent,
-    Input2Component
+    Input2Component,
+    ReusableFormComponent,
+    InputtypeComponent,
+    SelecttypeComponent
   ],
   imports: [
     BrowserModule,

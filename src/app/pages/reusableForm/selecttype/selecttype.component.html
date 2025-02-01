@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label>{{ label }} <abbr *ngIf="required">*</abbr></label>
+    <select type="text" [formControl]="formControls">
+        <option value="" selected> Select</option>
+        @for(item of arrayList; track item ;){
+        <option [value]="item[selectValue]"> {{ item[selectLabel] }} </option>
+        }
+    </select>
+</div>

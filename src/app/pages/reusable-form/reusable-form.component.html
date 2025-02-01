@@ -1,0 +1,23 @@
+<p>reusable-form works!</p>
+<form [formGroup]="userInfo" (ngSubmit)="ngOnSubmit()">
+    <!-- (textInsert)="firstNameEvent($event)" -->
+    <app-inputtype [type]="'text'" [label]="'First Name'" [required]="true" [formControls]="firstNameControl">
+    </app-inputtype>
+    <app-inputtype [type]="'text'" [label]="'last Name'" [required]="false" [formControls]="lastNameControl">
+    </app-inputtype>
+    <app-selecttype [label]="'Department'" [required]="true" [arrayList]="departmentInfoObj" [selectLabel]="'name'"
+        [selectValue]="'value'" [formControls]="departmentControl"></app-selecttype>
+    <!-- <div class="form-group">
+        <label for="department">Department <abbr>*</abbr> </label>
+        <select type="text" formControlName="department">
+            <option value="" selected> Select</option>
+            @for(department of departmentInfoObj; track department ;){
+            <option [value]="department.value"> {{ department.name }} </option>
+            }
+        </select>
+    </div> -->
+    <div class="form-group">
+        <button type="submit" [disabled]="userInfo.invalid"> Submit </button>
+        <button type="reset">Reset </button>
+    </div>
+</form>
