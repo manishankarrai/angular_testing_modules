@@ -28,6 +28,7 @@ import { Input2Component } from './pages/input2/input2.component';
 import { ReusableFormComponent } from './pages/reusable-form/reusable-form.component';
 import { InputtypeComponent } from './pages/reusableForm/inputtype/inputtype.component';
 import { SelecttypeComponent } from './pages/reusableForm/selecttype/selecttype.component';
+import { ColortagDirective } from './directives/colortag.directive';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { SelecttypeComponent } from './pages/reusableForm/selecttype/selecttype.
     Input2Component,
     ReusableFormComponent,
     InputtypeComponent,
-    SelecttypeComponent
+    SelecttypeComponent,
+    ColortagDirective
   ],
   imports: [
     BrowserModule,

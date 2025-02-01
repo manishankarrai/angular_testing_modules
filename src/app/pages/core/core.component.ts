@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, TemplateRef , ViewChild, ViewContainerRef, ElementRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, DoCheck, TemplateRef , ViewChild, ViewContainerRef, ElementRef, ComponentFactoryResolver, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-core',
@@ -17,10 +17,16 @@ export class CoreComponent implements OnInit, DoCheck {
 
   constructor(
     private viewContainerRef : ViewContainerRef ,
-    private cfr: ComponentFactoryResolver 
+    private cfr: ComponentFactoryResolver  ,
+    private el : ElementRef ,
+    private renderer : Renderer2 
    ) { }
   ngOnInit(): void {
-
+      const box  =  this.el.nativeElement.querySelector('.page_name');
+      this.renderer.addClass(box ,'highlighted');
+      setTimeout(() => {
+        this.renderer.removeClass(box, 'highlighted');
+      }, 2000);
   }
 
   ngDoCheck(): void {

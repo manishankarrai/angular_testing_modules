@@ -5,3 +5,6 @@
      font-family: 'Courier New', Courier, monospace;
      font-weight: 700;
 }
+input {
+     width: 300px !important;
+}
