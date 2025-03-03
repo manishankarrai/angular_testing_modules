@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DoBootstrap, Injector, NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollerDirective } from './directives/scroller.directive';
 import { TestdirectiveDirective } from './directives/testdirective.directive';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 //import { GraphQLModule } from './graphql.module';
 import { BooksComponent } from './pages/books/books.component';
 import { LastwordincapitalPipe } from './pipes/lastwordincapital.pipe';
@@ -29,6 +29,14 @@ import { ReusableFormComponent } from './pages/reusable-form/reusable-form.compo
 import { InputtypeComponent } from './pages/reusableForm/inputtype/inputtype.component';
 import { SelecttypeComponent } from './pages/reusableForm/selecttype/selecttype.component';
 import { ColortagDirective } from './directives/colortag.directive';
+import { CustomElementComponent } from './directives/custom-element.component';
+import { createCustomElement } from '@angular/elements';
+import { BindBackgroundDirective } from './directives/bind-background.directive';
+import { SidebartoggleComponent } from './pages/sidebartoggle/sidebartoggle.component';
+import { ClickToggleDirective } from './directives/click-toggle.directive';
+import { ToSignalComponentComponent } from './pages/to-signal-component/to-signal-component.component';
+import { SinglaHeaderComponent } from './pages/singla-header/singla-header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -54,19 +62,35 @@ import { ColortagDirective } from './directives/colortag.directive';
     ReusableFormComponent,
     InputtypeComponent,
     SelecttypeComponent,
-    ColortagDirective
+    ColortagDirective ,
+    CustomElementComponent,
+    BindBackgroundDirective,
+    SidebartoggleComponent,
+    ClickToggleDirective,
+    ToSignalComponentComponent,
+    SinglaHeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule ,
     FormsModule  ,
     ReactiveFormsModule,
-    CommonModule ,
-    HttpClientModule,
+    CommonModule,
+    NgbModule ,
    // GraphQLModule ,
+   
     
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+ // entryComponents: [CustomElementComponent], 
+  providers: [provideHttpClient()],
+  bootstrap: [AppComponent] ,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule   { 
+  constructor(public injector: Injector) { 
+    const el = createCustomElement(CustomElementComponent, { injector }); //(2)
+    customElements.define('custom-element', el); //(3)
+  }
+
+
+}

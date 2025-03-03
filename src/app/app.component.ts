@@ -10,7 +10,8 @@ export class AppComponent {
   title = 'ngtest';
   routeInpute: string = '';
   routeListOriginal: string[] = ['home', 'hostlistner' , 'gallaryview' , 'template1' , "core" ,
-     'signal1', 'imageupload' ,  'core_input' , 'reusableForm' ];
+                                 'signal1', 'imageupload' ,  'core_input' , 'reusableForm' , 
+                             'toSignal' , 'sidebartoggle' ];
   routeList: string[] = [];
 
   constructor(private router: Router) { }

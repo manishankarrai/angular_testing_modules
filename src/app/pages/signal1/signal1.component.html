@@ -1,6 +1,17 @@
-<p>signal1 works! {{ checkNum1() }}</p>
+<hr>
+<app-core-child2></app-core-child2>
+<button (click)="updateObjectInSignal()"> Object Signal </button>  
+<span *ngFor="let data of myArraySignal()" > {{  data }} , </span>
+<ul>
+    <li *ngFor="let num of myObjSignal() | keyvalue">{{ num.key   }} : {{  num.value }}</li> 
+
+</ul>
+<hr>
+<p>signal1 works! {{ checkNum1Readable() }}</p>
 <input type="number" #numInput  placeholder="increase signal ...."  />
 <button (click)="replaceSignal(numInput.value)">Replace</button>
 <button (click)="addSignal(numInput.value)">Update</button>
 <button (click)="removeSignal(numInput.value)">Reduce</button>
+<button  (click)="incrementCheckNum()"> Increase ++ </button>
+
 

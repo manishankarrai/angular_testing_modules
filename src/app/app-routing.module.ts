@@ -9,6 +9,8 @@ import { Signal1Component } from './pages/signal1/signal1.component';
 import { ImageuploadComponent } from './pages/imageupload/imageupload.component';
 import { InputComponent } from './pages/input/input.component';
 import { ReusableFormComponent } from './pages/reusable-form/reusable-form.component';
+import { SidebartoggleComponent } from './pages/sidebartoggle/sidebartoggle.component';
+import { ToSignalComponentComponent } from './pages/to-signal-component/to-signal-component.component';
 
 const routes: Routes = [
   { path: 'home'  , component: HomeComponent } ,
@@ -20,6 +22,9 @@ const routes: Routes = [
   { path : "imageupload" , component : ImageuploadComponent  } ,
   { path : "core_input" , component : InputComponent  } ,
   { path: "reusableForm"  , component : ReusableFormComponent },
+  { path: "sidebartoggle"  , component : SidebartoggleComponent },
+  {  path: 'toSignal' , component : ToSignalComponentComponent }, 
+
   { path : '' , redirectTo: 'home' ,  pathMatch: 'full'  }
 ];
 
