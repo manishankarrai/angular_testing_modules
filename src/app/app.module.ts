@@ -1,4 +1,4 @@
-import { DoBootstrap, Injector, NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { DoBootstrap, Injector, NgModule , CUSTOM_ELEMENTS_SCHEMA, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +37,12 @@ import { ClickToggleDirective } from './directives/click-toggle.directive';
 import { ToSignalComponentComponent } from './pages/to-signal-component/to-signal-component.component';
 import { SinglaHeaderComponent } from './pages/singla-header/singla-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PersonStateComponent } from './pages/person-state/person-state.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { personReducer } from './store/person/person.reducer';
+import { CallChildElementViewElementComponent } from './pages/call-child-element-view-element/call-child-element-view-element.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +75,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ClickToggleDirective,
     ToSignalComponentComponent,
     SinglaHeaderComponent,
+    PersonStateComponent,
+    CallChildElementViewElementComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +84,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule  ,
     ReactiveFormsModule,
     CommonModule,
-    NgbModule ,
+    NgbModule,
+    StoreModule.forRoot({ 'person' :  personReducer }, {}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }) ,
    // GraphQLModule ,
    
     

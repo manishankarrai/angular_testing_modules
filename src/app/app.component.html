@@ -1,3 +1,7 @@
+<custom-element name="John"  ></custom-element> <button  #tellme (click)="tellMeSomething()"> Tellme </button>
+
+<app-call-child-element-view-element #callchildelement></app-call-child-element-view-element>
+<hr>
 <input type="text" [(ngModel)]="routeInpute"  placeholder="type route..."   width="300"
 (keyup)="onkeyPress($event)"  />
  <button (click)="gotoRoute()">GoTo</button>
@@ -8,3 +12,4 @@
  </div>
  <app-singla-header></app-singla-header>
 <router-outlet></router-outlet>
+

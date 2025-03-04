@@ -1,0 +1,46 @@
+<form [formGroup]="personForm" (ngSubmit)="submitForm()">
+    <div>
+        <label> id </label>
+        <input type="number" formControlName="id" placeholder="id..." />
+    </div>
+    <div>
+        <label> name </label>
+        <input type="text" formControlName="name" placeholder="name..." />
+    </div>
+    <div>
+        <label> department </label>
+        <input type="text" formControlName="department" placeholder="department..." />
+    </div>
+    <div>
+        <label> salary </label>
+        <input type="number" formControlName="salary" placeholder="salary..." />
+    </div>
+    <button type="submit">@if(!isEditing()){ Submit} @else{ Update } </button>
+    <button type="reset"> Reset </button>
+
+</form>
+
+<hr>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th> id </th>
+                <th> name </th>
+                <th> department </th>
+                <th> salary </th>
+            </tr>
+        </thead>
+        <thead>
+            @for(item of personList; track item.id;){
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.department }}</td>
+                <td>{{ item.salary }}</td>
+                <td> <button (click)="removePerson(item.id)">Remove</button> <button (click)="editPerson(item)">Edit</button> </td>
+            </tr>
+            }
+        </thead>
+    </table>
+</div>
